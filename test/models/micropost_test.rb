@@ -5,8 +5,6 @@ class MicropostTest < ActiveSupport::TestCase
   def setup
     @user = users(:michael)
     @micropost = @user.microposts.build(content: "Lorem ipsum")
-    #@micropost = @user.microposts.build(content: "Lorem ipsum")
-    #@micropost = Micropost.new(content: "Lorem ipsum", user_id: @user.id)
   end
 
   test "should be valid" do
