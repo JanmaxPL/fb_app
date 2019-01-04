@@ -1,14 +1,14 @@
 class LikesController < ApplicationController
-   before_action :find_post
+   before_action :find_micropost
    
   def create
-    @micropost.likes.create(user_id: current_user.id)
+    @micropost.likes.create(user: current_user)
     redirect_to root_url
   end
   
   private
   
-  def find_post
-    @microposts= Post.find(params[:post_id])
+  def find_micropost
+    @micropost = Micropost.find(params[:micropost_id])
   end
 end
